@@ -1,0 +1,213 @@
+@import "elements.less";
+
+@desktop:       ~"only screen and (min-width: 960px)";
+@tablet:        ~"only screen and (min-width: 720px) and (max-width: 959px)";
+@mobile:        ~"only screen and (min-width: 430px) and (max-width: 719px)";
+@mini-mobile:   ~"only screen and (min-width: 1px) and (max-width: 429px)";
+
+@header-color: #FFFFFF;
+@text-selection-background-color: #D65858;
+@text-selection-text-color:#FFFFFF;
+@title-color: #E74C3C;
+@post-text-color: #34495E;
+@post-title-color: #2C3E50;
+@post-sub-title-color: #BDC3C7;
+@post-read-more-link-color: #16A085;
+@back-button-color:#3498DB;
+
+@font-family: 'Vollkorn', serif;
+@post-font-family: 'Open Sans', sans-serif;
+@huge-font: 4em;
+@big-font: 3.25em;
+@medium-font: 2em;
+@small-font: 1.5em;
+@smallest-font: 1.25em;
+@tiny-font: 1.1em;
+
+@title-height-for-desktop-and-tablet: 120px;
+@title-height-for-mobile: 80px;
+@title-height-for-mini-mobile: 70px;
+
+@back-height-for-desktop-and-tablets: 120px;
+@back-height-for-mobile: 60px;
+@back-height-for-mini-mobile: 50px;
+
+.no-margin{
+    margin: 0;
+}
+
+.no-padding{
+    padding: 0;
+}
+
+.no-margin-and-padding {
+    .no-margin;
+    .no-padding;
+}
+
+.content{
+    @media @desktop, {
+        width: 75%;
+    }
+    @media @tablet{
+        width: 85%;
+    }
+    @media @mobile{
+        width: 90%;
+    }
+    @media @mini-mobile{
+        width: 90%;
+    }
+    margin: 0 auto;
+}
+
+.post-title{
+    padding-bottom: 10px;
+}
+
+.media-font-title(@p-desktop-font, @p-tablet-font, @p-mobile-font, @p-mini-mobile-font){
+    @media @desktop{
+        font-size:@p-desktop-font;
+    }
+    @media @tablet{
+        font-size:@p-tablet-font;
+    }
+    @media @mobile {
+        font-size:@p-mobile-font;
+    }
+    @media @mini-mobile {
+        font-size:@p-mini-mobile-font;
+    }
+}
+
+.post-title-text{
+    color: @post-title-color;
+    .media-font-title(@medium-font, @medium-font, @small-font, @small-font);
+}
+
+.post-content{
+    .no-margin-and-padding;
+}
+
+.post-content-text{
+    color: @post-text-color;
+    .media-font-title(@smallest-font, @smallest-font, @tiny-font, @tiny-font);
+}
+
+html, body{
+    .no-margin-and-padding;
+}
+
+body, .title{
+    font-family: @font-family;
+    font-weight: normal !important;
+    ::-moz-selection
+    {
+        background:@text-selection-background-color;
+        color:@text-selection-text-color;
+    }
+    ::selection
+    {
+        background:@text-selection-background-color;
+        color:@text-selection-text-color;
+    }
+}
+
+header{
+    .header-height;
+    background: @header-color;
+    .content{
+        .title{
+            .no-margin-and-padding;
+            vertical-align: middle;
+            color: @title-color;
+            float: left;
+
+            @media @desktop, @tablet{
+                font-size:@huge-font;
+                line-height: @title-height-for-desktop-and-tablet;
+                width: 80%;
+            }
+            @media @mobile {
+                font-size:@huge-font;
+                line-height: @title-height-for-mobile;
+                width: 100%;
+            }
+            @media @mini-mobile {
+                font-size:@big-font;
+                line-height: @title-height-for-mini-mobile;
+                width: 100%;
+            }
+        }
+
+        .right_links_container{
+            .back, .profile{
+                .rounded(2px);
+
+                text-decoration: none;
+                background-color: @back-button-color;
+                color: white;
+                &:hover{
+                    color: @back-button-color;
+                    background-color: white;
+                }
+            }
+            .no-margin-and-padding;
+            vertical-align: middle;
+            overflow: hidden;
+
+            .back{
+                padding: 2 8 0 4px;
+            }
+
+            .profile{
+                padding: 2 8 0 8px;
+            }
+
+            @media @desktop{
+                text-align: right;
+                font-size:@small-font;
+                line-height: @back-height-for-desktop-and-tablets;
+                width: 20%;
+            }
+            @media @tablet{
+                text-align: center;
+                font-size:@small-font;
+                line-height: @back-height-for-desktop-and-tablets;
+                width: 20%;
+            }
+            @media @mobile {
+                text-align: left;
+                font-size:@small-font;
+                line-height: @back-height-for-mobile;
+                clear: both;
+                width: 100%;
+            }
+            @media @mini-mobile {
+                text-align: left;
+                font-size:@smallest-font;
+                line-height: @back-height-for-mini-mobile;
+                clear: both;
+                width: 100%;
+            }
+        }
+    }
+
+.header-height{
+        @media @desktop{
+            height: @title-height-for-desktop-and-tablet;
+        }
+        @media @tablet{
+            height: @title-height-for-desktop-and-tablet;
+        }
+        @media @mobile {
+            height: @title-height-for-mobile + @back-height-for-mobile;
+        }
+        @media @mini-mobile {
+            height: @title-height-for-mini-mobile + @back-height-for-mini-mobile;
+        }
+    }
+}
+
+
+

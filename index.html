@@ -1,0 +1,21 @@
+---
+layout: basic
+css_files:
+    - /static/css/index.css
+---
+
+<ol class="post-listing">
+    {% for post in site.posts %}
+    <li class="post-list-item">
+        <div class="title">
+            <a class="text" href="{{ post.url }}"> {{ post.title }}</a>
+            <span class="sub-title">({{ post.date | date_to_long_string }})</span>
+        </div>
+        <div class="post-excert">
+            {{ post.excerpt }}
+            <a class="read-more-link" href="{{ post.url }}">read more</a>
+        </div>
+        
+    </li>
+    {% endfor %}
+</ol>

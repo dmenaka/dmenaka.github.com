@@ -1,0 +1,262 @@
+@import "/static/lib/lesshat/css/lesshat.less";
+
+@desktop:       ~"only screen and (min-width: 960px)";
+@tablet:        ~"only screen and (min-width: 720px) and (max-width: 959px)";
+@mobile:        ~"only screen and (min-width: 430px) and (max-width: 719px)";
+@mini-mobile:   ~"only screen and (min-width: 1px) and (max-width: 429px)";
+
+@text-color: #34495e;
+@text-color-more-dark: #1B2A38;
+@text-color-dark: #2C3E50;  
+@text-color-light: #7F8C8D;
+@text-color-link: #16A085;
+@text-color-extra-dark: #E74C3C;
+@text-selection-background-color: #D65858;
+@text-selection-text-color:#FFFFFF;
+@experience-seperator-color:#BDC3C7;
+@experience-year-bg-color-on-small-devices:#E6E4FF;
+@experience-year-color-on-small-devices:#000000;
+
+@text-line-height: 1.5em;
+@year-width:100px;
+
+body{
+    font-family: 'Vollkorn', serif !important;
+    text-rendering: optimizeLegibility;
+}
+
+.content-width{
+    @media @desktop, {
+        width: 80%;
+    }
+    @media @tablet{
+        width: 90%;
+    }
+    @media @mobile{
+        width: 95%;
+    }
+    @media @mini-mobile{
+        width: 95%;
+    }
+}
+
+.header, .body{
+    .content-width;
+    margin: 15px auto;
+}
+
+.body{
+    .content-width;
+    margin: 30px auto;
+    ::-moz-selection
+    {
+        background:@text-selection-background-color;
+        color:@text-selection-text-color;
+    }
+    ::selection
+    {
+        background:@text-selection-background-color;
+        color:@text-selection-text-color;
+    }
+}
+
+.media-font-size(@p-desktop, @p-tablet, @p-mobile, @p-mini-mobile){
+    @media @desktop, {
+        font-size: @p-desktop;
+    }
+    @media @tablet{
+        font-size: @p-tablet;
+    }
+    @media @mobile{
+        font-size: @p-mobile;
+    }
+    @media @mini-mobile{
+        font-size: @p-mini-mobile;
+    }
+}
+
+.name-and-role{
+    >.name{
+        .media-font-size(4em, 4em, 3.5em, 3.25em);
+        padding-bottom: 10px;
+        color: @text-color-extra-dark;    
+    }
+}
+
+.role{
+    font-weight: 100;
+    .media-font-size(1.7em, 1.7em, 1.6em, 1.5em);
+    color: @text-color-dark;
+}
+
+.summary, .education, .experience, .social{
+    line-height: @text-line-height;
+    color: @text-color-more-dark;
+    margin: 20px auto;
+}
+
+.sub-heading{
+    font-size: 1.3em;
+    color : @text-color-dark;
+}
+
+.link{
+    text-decoration: underline;
+    color:@text-color-link;
+}
+
+.college-year, .experience-summary, .company-name > .duration, .technologies{
+    color: @text-color-light;
+}
+
+
+
+.exp-year-and-desc-large-device{
+    >.year-container{
+        position: absolute;
+        width: @year-width;
+        height: 100%;
+        >.year{
+            position: absolute;
+            display: inline;
+            top: 50%;
+            margin-top: (-1 * @text-line-height/2);
+        }
+    }
+    >.details{
+        overflow: hidden;
+        margin-left: @year-width;
+    }
+}
+
+.exp-year-and-desc-small-device{
+    >.year-container{
+        position: relative;
+        width: @year-width;
+        padding: 10px 0;
+        >.year{
+            position: relative;
+            display: inline;
+            top: 50%;
+            margin-top: (-1 * @text-line-height/2);
+
+            background-color: @experience-year-bg-color-on-small-devices;
+            padding: 2px 4px;
+            color: @experience-year-color-on-small-devices;
+            border-radius: 2px;
+
+         }
+    }
+    >.details{
+        overflow: hidden;
+    }
+}
+
+.exp-year-and-desc-for-media{
+    @media @desktop, {
+        .exp-year-and-desc-large-device;
+    }
+    @media @tablet{
+        .exp-year-and-desc-large-device;
+    }
+    @media @mobile{
+        .exp-year-and-desc-small-device;
+    }
+    @media @mini-mobile{
+        .exp-year-and-desc-small-device;
+    }
+}
+
+
+.company{
+    margin: 10px 0;
+    >.experience-line-item{
+         position: relative;
+         margin: 5px 0 10px 0;
+
+         border-bottom-style: dotted;
+         border-width: 1px;
+         border-color: @experience-seperator-color;
+
+         >.experience-container{
+            margin-bottom: 5px;
+            position: relative;
+              .exp-year-and-desc-for-media;
+          }
+    }
+
+    >.company-name{
+        >.name{
+            text-decoration: underline;
+        }
+        >.duration{
+            margin-left: 3px;
+            font-size: 0.9em;
+        }
+    }
+}
+
+.social-icon(@background-url, @tip-class){
+     float: left;
+     width:25px;
+     height:25px;
+     margin: 5px 4px;
+
+     background:url(@background-url) 0 0;
+    .transition(~"background 500ms ease-in-out");
+    &:hover{
+        background-position:0 25px;
+        ~ div{
+            >.@{tip-class}{
+                display: inline;
+            }
+        }
+    }
+    >a{
+        display: block;
+        height: 100%;
+    }
+ }
+
+.social{
+    >.social-sub-heading{
+        float: left;
+        line-height: 35px;
+        padding-top: 2px;
+    }
+    >.social-wrapper{
+        display: inline-block;
+        margin-left: 15px;
+
+        >.blog{
+            .social-icon("/static/img/blog.png", blog-tip);
+        }
+        >.github{
+            .social-icon("/static/img/github.png", github-tip);
+        }
+        >.linkedin{
+            .social-icon("/static/img/linkedin.png", linkedin-tip);
+        }
+
+        >.tip{
+            clear: left;
+            text-align: center;
+            >span{
+                display: none;
+                .border-radius(2px);
+                -webkit-animation: fadeIn 250ms;
+                animation: fadeIn 250ms;
+             }
+        }
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

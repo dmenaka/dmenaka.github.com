@@ -1,0 +1,4 @@
+auto: true
+future: false
+excerpt_separator: "<!--rm-->"
+markdown: rdiscount

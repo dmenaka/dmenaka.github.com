@@ -1,0 +1,299 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+.no-margin {
+  margin: 0;
+}
+.no-padding {
+  padding: 0;
+}
+.no-margin-and-padding {
+  margin: 0;
+  padding: 0;
+}
+.content {
+  margin: 0 auto;
+}
+@media only screen and (min-width: 960px) {
+  .content {
+    width: 75%;
+  }
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .content {
+    width: 85%;
+  }
+}
+@media only screen and (min-width: 430px) and (max-width: 719px) {
+  .content {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 1px) and (max-width: 429px) {
+  .content {
+    width: 90%;
+  }
+}
+.post-title {
+  padding-bottom: 10px;
+}
+.post-title-text {
+  color: #2c3e50;
+}
+@media only screen and (min-width: 960px) {
+  .post-title-text {
+    font-size: 2em;
+  }
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .post-title-text {
+    font-size: 2em;
+  }
+}
+@media only screen and (min-width: 430px) and (max-width: 719px) {
+  .post-title-text {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (min-width: 1px) and (max-width: 429px) {
+  .post-title-text {
+    font-size: 1.5em;
+  }
+}
+.post-content {
+  margin: 0;
+  padding: 0;
+}
+.post-content-text {
+  color: #34495e;
+}
+@media only screen and (min-width: 960px) {
+  .post-content-text {
+    font-size: 1.25em;
+  }
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .post-content-text {
+    font-size: 1.25em;
+  }
+}
+@media only screen and (min-width: 430px) and (max-width: 719px) {
+  .post-content-text {
+    font-size: 1.1em;
+  }
+}
+@media only screen and (min-width: 1px) and (max-width: 429px) {
+  .post-content-text {
+    font-size: 1.1em;
+  }
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body,
+.title {
+  font-family: 'Vollkorn', serif;
+  font-weight: normal !important;
+}
+body ::-moz-selection,
+.title ::-moz-selection {
+  background: #d65858;
+  color: #ffffff;
+}
+body ::selection,
+.title ::selection {
+  background: #d65858;
+  color: #ffffff;
+}
+header {
+  background: #ffffff;
+}
+@media only screen and (min-width: 960px) {
+  header {
+    height: 120px;
+  }
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  header {
+    height: 120px;
+  }
+}
+@media only screen and (min-width: 430px) and (max-width: 719px) {
+  header {
+    height: 140px;
+  }
+}
+@media only screen and (min-width: 1px) and (max-width: 429px) {
+  header {
+    height: 120px;
+  }
+}
+header .content .title {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  color: #e74c3c;
+  float: left;
+}
+@media only screen and (min-width: 960px), only screen and (min-width: 720px) and (max-width: 959px) {
+  header .content .title {
+    font-size: 4em;
+    line-height: 120px;
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 430px) and (max-width: 719px) {
+  header .content .title {
+    font-size: 4em;
+    line-height: 80px;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1px) and (max-width: 429px) {
+  header .content .title {
+    font-size: 3.25em;
+    line-height: 70px;
+    width: 100%;
+  }
+}
+header .content .right_links_container {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  overflow: hidden;
+}
+header .content .right_links_container .back,
+header .content .right_links_container .profile {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  text-decoration: none;
+  background-color: #3498db;
+  color: white;
+}
+header .content .right_links_container .back:hover,
+header .content .right_links_container .profile:hover {
+  color: #3498db;
+  background-color: white;
+}
+header .content .right_links_container .back {
+  padding: 2 8 0 4px;
+}
+header .content .right_links_container .profile {
+  padding: 2 8 0 8px;
+}
+@media only screen and (min-width: 960px) {
+  header .content .right_links_container {
+    text-align: right;
+    font-size: 1.5em;
+    line-height: 120px;
+    width: 20%;
+  }
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  header .content .right_links_container {
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 120px;
+    width: 20%;
+  }
+}
+@media only screen and (min-width: 430px) and (max-width: 719px) {
+  header .content .right_links_container {
+    text-align: left;
+    font-size: 1.5em;
+    line-height: 60px;
+    clear: both;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1px) and (max-width: 429px) {
+  header .content .right_links_container {
+    text-align: left;
+    font-size: 1.25em;
+    line-height: 50px;
+    clear: both;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 960px) {
+  header .header-height {
+    height: 120px;
+  }
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  header .header-height {
+    height: 120px;
+  }
+}
+@media only screen and (min-width: 430px) and (max-width: 719px) {
+  header .header-height {
+    height: 140px;
+  }
+}
+@media only screen and (min-width: 1px) and (max-width: 429px) {
+  header .header-height {
+    height: 120px;
+  }
+}
+.profile {
+  display: none;
+}
+.post .title {
+  padding-bottom: 10px;
+  color: #2c3e50;
+}
+@media only screen and (min-width: 960px) {
+  .post .title {
+    font-size: 2em;
+  }
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .post .title {
+    font-size: 2em;
+  }
+}
+@media only screen and (min-width: 430px) and (max-width: 719px) {
+  .post .title {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (min-width: 1px) and (max-width: 429px) {
+  .post .title {
+    font-size: 1.5em;
+  }
+}
+.post .text {
+  color: #34495e;
+  margin: 0;
+  padding: 0;
+}
+@media only screen and (min-width: 960px) {
+  .post .text {
+    font-size: 1.25em;
+  }
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .post .text {
+    font-size: 1.25em;
+  }
+}
+@media only screen and (min-width: 430px) and (max-width: 719px) {
+  .post .text {
+    font-size: 1.1em;
+  }
+}
+@media only screen and (min-width: 1px) and (max-width: 429px) {
+  .post .text {
+    font-size: 1.1em;
+  }
+}
+.post .text p:first-of-type {
+  margin: 0;
+  padding: 0;
+}
